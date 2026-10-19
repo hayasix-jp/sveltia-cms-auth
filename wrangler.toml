@@ -1,3 +1,11 @@
 name = "sveltia-cms-auth"
 main = "src/index.js"
 compatibility_date = "2023-03-24"
+
+# The sites that may log in through this relay (their Sveltia CMS admin UIs). Written here, not only in the Cloudflare
+# dashboard: a deploy from this repository (Workers Builds, on every push to main) replaces the dashboard's variables.
+#   itsumonoworks.com  hayasix-jp/CMS            https://itsumonoworks.com/admin/
+#   tataki.design      hayasix-jp/tataki-design  https://tataki.design/admin/
+# GITHUB_CLIENT_ID / GITHUB_CLIENT_SECRET stay Secrets in the dashboard (a deploy keeps those).
+[vars]
+ALLOWED_DOMAINS = "itsumonoworks.com,tataki.design"
